@@ -2,7 +2,7 @@
 
 /* Jost - Variable font for headings (weights 400-700) */
 @font-face {
-  font-family: 'Jost';
+  font-family: jost;
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 /* Source Sans 3 - Variable font for body text (weights 400-700) */
 @font-face {
-  font-family: 'Source Sans 3';
+  font-family: sourcesans;
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;

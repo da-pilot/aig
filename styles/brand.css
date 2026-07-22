@@ -2,8 +2,8 @@
 :root {
   /* fonts — AIG uses proprietary Futura PT (headings) + Source Sans Pro (body).
      Headings map to a geometric-sans system stack; body to Source Sans 3 (open equivalent). */
-  --heading-font-family: "Jost", "Century Gothic", "Twentieth Century", "URW Geometric", "Avenir Next", avenir, helvetica, arial, sans-serif;
-  --body-font-family: "Source Sans 3", "Source Sans Pro", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
+  --heading-font-family: jost, "Century Gothic", "Twentieth Century", "URW Geometric", "Avenir Next", avenir, helvetica, arial, sans-serif;
+  --body-font-family: sourcesans, "Source Sans Pro", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, helvetica, arial, sans-serif;
 
   /* colors */
   --background-color: #fff;
