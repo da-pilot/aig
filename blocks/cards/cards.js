@@ -1,5 +1,10 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
+/**
+ * Decorates cards block
+ * Supports variants: default, story
+ * @param {Element} block The cards block element
+ */
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
