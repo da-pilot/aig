@@ -288,6 +288,17 @@ main img {
   width: 100%;
 }
 
+/* a heading with no accompanying body copy acts as a section title */
+.default-content-wrapper > h1:only-child,
+.default-content-wrapper > h2:only-child,
+.default-content-wrapper > h3:only-child,
+.default-content-wrapper > h4:only-child,
+.default-content-wrapper > h5:only-child,
+.default-content-wrapper > h6:only-child {
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
 /* sections */
 main > .section {
   margin: 40px 0;
