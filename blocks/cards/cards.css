@@ -8,6 +8,16 @@
   gap: 32px;
 }
 
+/* Cards attached to hero - remove top spacing */
+.cards-container:has(.cards.attached-to-hero) {
+  padding-top: 0;
+}
+
+.cards.attached-to-hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .cards > ul > li {
   display: flex;
   flex-direction: row;

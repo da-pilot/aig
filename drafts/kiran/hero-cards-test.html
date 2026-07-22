@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hero + Cards Auto-blocking Test</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <!-- Section 1: Hero + Cards together (auto-blocking) -->
+    <div>
+      <div class="hero">
+        <div>
+          <div>
+            <picture>
+              <source srcset="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_15e5a69a320769088589875772c5d2cf4698ac8ec.png">
+              <img src="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_15e5a69a320769088589875772c5d2cf4698ac8ec.png" alt="AIG Building" loading="eager">
+            </picture>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h1>Test: Hero with Cards Attached</h1>
+            <p>This hero block should have zero bottom padding when cards are directly below in the same section. The cards should start immediately with a pale blue background.</p>
+            <p><a href="#test">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div>
+          <div>
+            <picture>
+              <img src="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_166962577633bbc3014d690d079cff173c4ad4395.jpg" alt="Eric Andersen">
+            </picture>
+          </div>
+          <div>
+            <h2>Eric Andersen Talks with Yahoo! Finance</h2>
+            <p>AIG President & Chief Executive Officer Eric Andersen discusses the evolving risk landscape and priorities for AIG.</p>
+            <p><a href="#video">Watch the video</a></p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <picture>
+              <img src="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_18324149be13d33f02275cfd482441d9ddbbb7cda.jpg" alt="Golf trophy">
+            </picture>
+          </div>
+          <div>
+            <h2>Celebrate the 2026 AIG Women's Open</h2>
+            <p>AIG is proud to support the incredible athletes inspiring the next generation of golf champions.</p>
+            <p><a href="#golf">Read more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="section-metadata">
+        <div>
+          <div>style</div>
+          <div>paleblue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Banner Block Test -->
+    <div>
+      <div class="banner">
+        <div>
+          <div>
+            <picture>
+              <source srcset="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_1821a94da1194672db9b4783a057fd524d33a05ed.png">
+              <img src="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_1821a94da1194672db9b4783a057fd524d33a05ed.png" alt="Business professionals" loading="lazy">
+            </picture>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2>Banner Block Test</h2>
+            <p>This is the banner block with text on left (navy background) and image on right. Links should be underlined, not styled as buttons.</p>
+            <p><a href="#banner">Explore careers</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Standalone Hero (no auto-blocking) -->
+    <div>
+      <div class="hero">
+        <div>
+          <div>
+            <picture>
+              <img src="https://main--aig-eds-migration-poc--kprasad05.aem.live/media_144c6005beb05722102afcbd25058cd264ccd8f25.jpg" alt="Investor Day">
+            </picture>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h2>Standalone Hero Block</h2>
+            <p>This hero block stands alone in its section - should have normal bottom padding, no auto-blocking.</p>
+            <p><a href="#standalone">View details</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>
