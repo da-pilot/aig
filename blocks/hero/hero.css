@@ -1,3 +1,4 @@
+/* Hero - Full-bleed background-image banner with navy fade overlay */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +6,155 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-}
-
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  min-height: 320px;
+  overflow: hidden;
+  padding: 0;
 }
 
 .hero picture {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: initial;
 }
 
 .hero img {
-  object-fit: cover;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero > div:first-child {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    90deg,
+    var(--heading-color) 0%,
+    var(--heading-color) 70%,
+    rgb(0 24 113 / 55%) 100%
+  );
+  pointer-events: none;
+}
+
+.hero > div:last-child {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
+  box-sizing: border-box;
+  padding: 32px 24px;
+}
+
+.hero > div:last-child > div {
+  width: 100%;
+}
+
+.hero > div:first-child > div {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero.no-image {
+  background-color: var(--heading-color);
+}
+
+.hero.no-image > div:first-child,
+.hero.no-image::before {
+  display: none;
+}
+
+.hero h1,
+.hero h2 {
+  margin: 0 0 32px;
+  color: #fff;
+  font-size: var(--heading-size-xxl, 44px);
+  font-weight: 500;
+  line-height: 1.27;
+  max-width: initial;
+}
+
+.hero h1 a:any-link,
+.hero h2 a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero p {
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: var(--body-font-size-m, 20px);
+  line-height: 1.5;
+}
+
+.hero > div:last-child p a:any-link,
+main .hero a.button:any-link {
+  display: inline-block;
+  margin: 8px 0 0;
+  border: 1px solid #fff;
+  border-radius: 0;
+  padding: 16px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs, 16px);
+  font-weight: 500;
+  line-height: 1.125;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hero > div:last-child p a:any-link:hover,
+.hero > div:last-child p a:any-link:focus-visible,
+main .hero a.button:any-link:hover,
+main .hero a.button:any-link:focus-visible {
+  background: #fff;
+  color: var(--heading-color);
+  text-decoration: none;
 }
 
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 421px;
+  }
+
+  .hero::before {
+    background-image: linear-gradient(
+      90deg,
+      var(--heading-color) 0%,
+      var(--heading-color) 45%,
+      rgb(0 24 113 / 0%) 75%
+    );
+  }
+
+  .hero > div:last-child {
+    min-height: 421px;
+    max-width: 49%;
+    padding: 40px 0 40px 8.33%;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 44px;
+    line-height: 56px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    line-height: 30px;
   }
 }

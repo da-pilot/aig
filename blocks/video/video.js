@@ -117,7 +117,7 @@ export default async function decorate(block) {
     const media = block.querySelector('picture');
     if (media) {
       const mediaWrapper = media.closest('p') || media.parentElement;
-      if (mediaWrapper) mediaWrapper.classList.add('video-feature-poster');
+      if (mediaWrapper) mediaWrapper.classList.add('video-poster');
     }
     return;
   }
@@ -129,13 +129,13 @@ export default async function decorate(block) {
   if (placeholder) {
     block.classList.add('placeholder');
     const wrapper = document.createElement('div');
-    wrapper.className = 'video-feature-placeholder';
+    wrapper.className = 'video-placeholder';
     wrapper.append(placeholder);
 
     if (!autoplay) {
       wrapper.insertAdjacentHTML(
         'beforeend',
-        '<div class="video-feature-placeholder-play"><button type="button" title="Play"></button></div>',
+        '<div class="video-placeholder-play"><button type="button" title="Play"></button></div>',
       );
       wrapper.addEventListener('click', () => {
         wrapper.remove();

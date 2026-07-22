@@ -1,9 +1,11 @@
+/* Columns - styled columns for featured content */
 .columns > div {
   display: flex;
   flex-direction: column;
 }
 
 .columns img {
+  display: block;
   width: 100%;
 }
 
@@ -29,5 +31,109 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* 1 column - centered intro/about section */
+.columns.columns-1-cols > div {
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.columns.columns-1-cols h2 {
+  margin: 0 0 16px;
+  color: var(--heading-color);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 56px;
+  text-align: center;
+}
+
+.columns.columns-1-cols p {
+  margin: 0 0 15px;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+
+.columns.columns-1-cols a:any-link {
+  color: var(--link-color);
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+/* 2 columns - featured story with background */
+.columns.columns-2-cols > div {
+  background-color: var(--light-color);
+}
+
+.columns.columns-2-cols > div > div {
+  padding: 32px;
+}
+
+.columns.columns-2-cols > div > .columns-img-col {
+  padding: 0;
+}
+
+.columns.columns-2-cols .columns-img-col img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.columns.columns-2-cols h3 {
+  margin: 0 0 16px;
+  color: var(--heading-color);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.columns.columns-2-cols h3 a:any-link {
+  color: var(--heading-color);
+  text-decoration: none;
+}
+
+.columns.columns-2-cols h3 a:hover {
+  text-decoration: underline;
+}
+
+.columns.columns-2-cols p {
+  margin: 0 0 15px;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.columns.columns-2-cols p a:any-link {
+  color: var(--link-color);
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.columns.columns-2-cols p a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 900px) {
+  .columns.columns-2-cols > div {
+    align-items: stretch;
+    flex-direction: row;
+  }
+
+  .columns.columns-2-cols > div > div {
+    flex: 0 1 57%;
+    order: 0;
+    padding: 32px 58px 32px 32px;
+  }
+
+  .columns.columns-2-cols > div > .columns-img-col {
+    flex: 0 1 43%;
+    order: 1;
+    padding: 0;
   }
 }

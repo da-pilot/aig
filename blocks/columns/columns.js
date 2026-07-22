@@ -1,3 +1,8 @@
+/**
+ * Decorates columns block
+ * Supports variants: default, feature
+ * @param {Element} block The columns block element
+ */
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
