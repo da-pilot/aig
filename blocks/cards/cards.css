@@ -115,49 +115,14 @@
   }
 }
 
-/* Story variant with paleblue section - large full-width cards */
+/* Light variant - pale blue background */
+.cards.light {
+  background-color: var(--light-color);
+  padding: 32px 24px;
+}
+
 @media (width >= 900px) {
-  .section.paleblue .cards > ul {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .section.paleblue .cards > ul > li {
-    align-items: center;
-    gap: 48px;
-  }
-
-  .section.paleblue .cards > ul > li:nth-child(odd) {
-    flex-direction: row-reverse;
-  }
-
-  .section.paleblue .cards .cards-card-image {
-    flex: 1 1 55%;
-    max-width: 55%;
-  }
-
-  .section.paleblue .cards .cards-card-image img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 646 / 283;
-    object-fit: cover;
-  }
-
-  .section.paleblue .cards .cards-card-body {
-    flex: 1 1 45%;
-  }
-
-  .section.paleblue .cards .cards-card-body h2,
-  .section.paleblue .cards .cards-card-body h3,
-  .section.paleblue .cards .cards-card-body h4 {
-    font-family: var(--heading-font-family);
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  .section.paleblue .cards .cards-card-body p {
-    color: var(--text-color);
-    line-height: 30px;
+  .cards.light {
+    padding: 48px;
   }
 }
