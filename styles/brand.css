@@ -14,14 +14,8 @@
   --paleblue-color: #c7dbf4;
 
   /* spacing */
-  --section-padding: 100px;
   --nav-height: 64px;
 
-  /* heading sizes (desktop) */
-  --heading-size-xxl: 44px;
-  --heading-size-xl: 44px;
-  --heading-size-l: 24px;
-  --heading-size-m: 20px;
-  --heading-size-s: 18px;
-  --heading-size-xs: 16px;
+  /* full-bleed sections cap and center beyond this width, matching production */
+  --page-max-width: 1920px;
 }

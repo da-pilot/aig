@@ -13,6 +13,14 @@
   padding-top: 0;
 }
 
+/* Light variant is full-bleed up to 1920px - background spans the viewport, content stays inset via padding.
+   Beyond 1920px the background caps and centers instead of stretching indefinitely. */
+.cards-container:has(.cards.light) .cards-wrapper {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
 .cards.attached-to-hero {
   margin-top: 0;
   padding-top: 0;
@@ -118,23 +126,23 @@
 
   .cards > ul > li {
     flex-direction: row;
-    gap: 32px;
+    gap: 48px;
   }
 
   .cards .cards-card-image {
-    flex: 0 0 280px;
-    max-width: 280px;
+    flex: 0 0 190px;
+    max-width: 190px;
   }
 }
 
 /* Light variant - pale blue background */
 .cards.light {
-  background-color: var(--light-color);
+  background-color: var(--paleblue-color);
   padding: 32px 24px;
 }
 
 @media (width >= 900px) {
   .cards.light {
-    padding: 48px;
+    padding: 48px 8.33%;
   }
 }
