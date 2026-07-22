@@ -1,7 +1,17 @@
 /* Columns - styled columns for featured content */
+.columns-container .columns-wrapper {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
+}
+
+/* Vertical spacing between rows when a block has more than one (e.g. alternating rows) */
+.columns > div + div {
+  margin-top: 24px;
 }
 
 .columns img {
@@ -79,7 +89,7 @@
 }
 
 .columns.columns-2-cols .columns-img-col img {
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -109,31 +119,59 @@
 }
 
 .columns.columns-2-cols p a:any-link {
+  display: inline-block;
   color: var(--link-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
   font-size: 20px;
-  font-weight: 400;
+  line-height: 36px;
   text-decoration: none;
 }
 
+.columns.columns-2-cols p a:any-link::after {
+  content: "";
+  display: inline-block;
+  width: 1.1em;
+  height: 0.7em;
+  margin-left: 0.4em;
+  background-color: currentcolor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16"><path d="M15 1l7 7-7 7M0 8h21" stroke="black" stroke-width="2" fill="none"/></svg>') no-repeat center / contain;
+}
+
 .columns.columns-2-cols p a:hover {
-  text-decoration: underline;
+  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 @media (width >= 900px) {
   .columns.columns-2-cols > div {
-    align-items: stretch;
+    align-items: center;
     flex-direction: row;
+    gap: 0;
   }
 
   .columns.columns-2-cols > div > div {
-    flex: 0 1 57%;
+    flex: 0 1 45%;
     order: 0;
-    padding: 32px 58px 32px 32px;
+    padding: 32px;
   }
 
   .columns.columns-2-cols > div > .columns-img-col {
-    flex: 0 1 43%;
+    flex: 0 1 55%;
     order: 1;
     padding: 0;
+  }
+}
+
+/* Feature variant - no background tint, for rows alternating on a white section */
+.columns.columns-2-cols.feature > div {
+  background-color: transparent;
+}
+
+@media (width >= 900px) {
+  /* respect each row's own authoring order instead of always forcing image to the right */
+  .columns.columns-2-cols.feature > div > div,
+  .columns.columns-2-cols.feature > div > .columns-img-col {
+    order: unset;
   }
 }

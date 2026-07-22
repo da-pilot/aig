@@ -77,6 +77,29 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Detects hero + cards pattern and applies attached styling classes
+ * Must run after decorateBlocks so block classes exist
+ * @param {Element} main The container element
+ */
+function buildHeroCardsAutoBlocks(main) {
+  const sections = [...main.querySelectorAll('.section')];
+  sections.forEach((section) => {
+    const blocks = [...section.querySelectorAll(':scope > div[class*="-wrapper"] > div[class]')];
+    if (blocks.length >= 2) {
+      const firstBlock = blocks[0];
+      const secondBlock = blocks[1];
+
+      if (firstBlock.classList.contains('hero') && secondBlock.classList.contains('cards')) {
+        firstBlock.classList.add('hero-attached');
+        secondBlock.classList.add('attached-to-hero');
+        // eslint-disable-next-line no-console
+        console.log('Hero + Cards auto-blocking applied');
+      }
+    }
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -178,6 +201,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateSectionMetadata(main);
   decorateBlocks(main);
+  buildHeroCardsAutoBlocks(main); // Run after blocks are decorated
   decorateButtons(main);
 }
 

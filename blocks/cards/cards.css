@@ -8,17 +8,36 @@
   gap: 32px;
 }
 
+/* Cards attached to hero - remove top spacing */
+.cards-container:has(.cards.attached-to-hero) {
+  padding-top: 0;
+}
+
+/* Light variant is full-bleed up to 1920px - background spans the viewport, content stays inset via padding.
+   Beyond 1920px the background caps and centers instead of stretching indefinitely. */
+.cards-container:has(.cards.light) .cards-wrapper {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.cards.attached-to-hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .cards > ul > li {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 16px;
   background-color: transparent;
   border: 0;
 }
 
 .cards .cards-card-image {
-  flex: 0 0 auto;
+  flex: 0 0 40%;
+  max-width: 40%;
   line-height: 0;
 }
 
@@ -28,8 +47,9 @@
 }
 
 .cards .cards-card-image img {
-  width: 190px;
-  height: 190px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -101,53 +121,28 @@
 @media (width >= 900px) {
   .cards > ul {
     grid-template-columns: 1fr 1fr;
-    gap: 24px 48px;
-  }
-}
-
-/* Story variant with paleblue section - large full-width cards */
-@media (width >= 900px) {
-  .section.paleblue .cards > ul {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 48px 64px;
   }
 
-  .section.paleblue .cards > ul > li {
-    align-items: center;
+  .cards > ul > li {
+    flex-direction: row;
     gap: 48px;
   }
 
-  .section.paleblue .cards > ul > li:nth-child(odd) {
-    flex-direction: row-reverse;
+  .cards .cards-card-image {
+    flex: 0 0 190px;
+    max-width: 190px;
   }
+}
 
-  .section.paleblue .cards .cards-card-image {
-    flex: 1 1 55%;
-    max-width: 55%;
-  }
+/* Light variant - pale blue background */
+.cards.light {
+  background-color: var(--paleblue-color);
+  padding: 32px 24px;
+}
 
-  .section.paleblue .cards .cards-card-image img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 646 / 283;
-    object-fit: cover;
-  }
-
-  .section.paleblue .cards .cards-card-body {
-    flex: 1 1 45%;
-  }
-
-  .section.paleblue .cards .cards-card-body h2,
-  .section.paleblue .cards .cards-card-body h3,
-  .section.paleblue .cards .cards-card-body h4 {
-    font-family: var(--heading-font-family);
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  .section.paleblue .cards .cards-card-body p {
-    color: var(--text-color);
-    line-height: 30px;
+@media (width >= 900px) {
+  .cards.light {
+    padding: 48px 8.33%;
   }
 }
