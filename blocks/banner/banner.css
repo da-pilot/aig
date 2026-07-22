@@ -1,4 +1,4 @@
-/* Banner - two-column layout with image on right */
+/* Banner - full-bleed background-image with navy fade overlay */
 .banner-container .banner-wrapper {
   max-width: unset;
   padding: 0;
@@ -6,15 +6,15 @@
 
 .banner {
   position: relative;
-  display: flex;
-  flex-direction: column;
   min-height: 320px;
   overflow: hidden;
+  padding: 0;
 }
 
 .banner picture {
-  display: block;
-  width: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: initial;
 }
 
 .banner img {
@@ -25,17 +25,38 @@
 }
 
 .banner > div:first-child {
-  order: 1;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  display: block;
+  height: 100%;
   width: 100%;
 }
 
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    90deg,
+    var(--heading-color) 0%,
+    var(--heading-color) 70%,
+    rgb(0 24 113 / 55%) 100%
+  );
+  pointer-events: none;
+}
+
 .banner > div:last-child {
-  order: 0;
-  background-color: var(--heading-color);
-  padding: 32px 24px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 320px;
+  box-sizing: border-box;
+  padding: 32px 24px;
 }
 
 .banner > div:last-child > div {
@@ -44,10 +65,16 @@
 
 .banner > div:first-child > div {
   display: block;
+  height: 100%;
   width: 100%;
 }
 
-.banner.no-image > div:first-child {
+.banner.no-image {
+  background-color: var(--heading-color);
+}
+
+.banner.no-image > div:first-child,
+.banner.no-image::before {
   display: none;
 }
 
@@ -75,45 +102,64 @@
 
 .banner > div:last-child p a:any-link,
 main .banner a.button:any-link {
+  position: relative;
   display: inline-block;
   margin: 8px 0 0;
-  padding: 0;
+  padding: 0 32px 0 0;
   background: transparent;
   border: 0;
-  color: var(--link-color);
+  color: #80d2f2;
   font-family: var(--heading-font-family);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.5;
-  text-decoration: underline;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  text-decoration: none;
   white-space: normal;
+  transition: color 0.3s ease;
+}
+
+.banner > div:last-child p a:any-link::after,
+main .banner a.button:any-link::after {
+  content: '\2192';
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.3s ease;
 }
 
 .banner > div:last-child p a:any-link:hover,
 .banner > div:last-child p a:any-link:focus-visible,
 main .banner a.button:any-link:hover,
 main .banner a.button:any-link:focus-visible {
-  color: var(--link-hover-color);
+  color: #80d2f2;
   text-decoration: underline;
+}
+
+.banner > div:last-child p a:any-link:hover::after,
+.banner > div:last-child p a:any-link:focus-visible::after,
+main .banner a.button:any-link:hover::after,
+main .banner a.button:any-link:focus-visible::after {
+  transform: translateX(5px);
 }
 
 @media (width >= 900px) {
   .banner {
-    flex-direction: row;
     min-height: 400px;
   }
 
-  .banner > div:first-child {
-    order: 1;
-    flex: 0 0 50%;
-    width: 50%;
+  .banner::before {
+    background-image: linear-gradient(
+      90deg,
+      var(--heading-color) 0%,
+      var(--heading-color) 45%,
+      rgb(0 24 113 / 0%) 75%
+    );
   }
 
   .banner > div:last-child {
-    order: 0;
-    flex: 0 0 50%;
-    width: 50%;
-    padding: 40px 48px;
+    min-height: 400px;
+    max-width: 49%;
+    padding: 40px 0 40px 8.33%;
   }
 
   .banner h1,
@@ -126,10 +172,5 @@ main .banner a.button:any-link:focus-visible {
   .banner p {
     font-size: 20px;
     line-height: 1.5;
-  }
-
-  .banner > div:last-child p a:any-link,
-  main .banner a.button:any-link {
-    font-size: 20px;
   }
 }
