@@ -1,10 +1,40 @@
 /* Columns - styled columns for featured content */
+.columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
 .columns img {
   display: block;
   width: 100%;
 }
 
-/* Feature variant: 1 column - centered intro/about section */
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
+
+/* 1 column - centered intro/about section */
 .columns.columns-1-cols > div {
   max-width: 950px;
   margin: 0 auto;
@@ -35,7 +65,7 @@
   text-decoration: underline;
 }
 
-/* Feature variant: 2 columns - featured story with background */
+/* 2 columns - featured story with background */
 .columns.columns-2-cols > div {
   background-color: var(--light-color);
 }
