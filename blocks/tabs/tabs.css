@@ -56,7 +56,7 @@
 
 /* ---- Tab panel (white content card, centered) ---- */
 .tabs .tabs-panel {
-  max-width: 930px;
+  max-width: 66%;
   margin: 30px auto 15px;
   padding: 0;
   border: 0;
