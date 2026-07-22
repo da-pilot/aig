@@ -47,7 +47,7 @@ If you're using AI coding agents (Claude Code, Cursor, etc.), install Adobe's ED
 ### GitHub CLI (upskill)
 ```sh
 gh extension install ai-ecoverse/gh-upskill
-gh upskill adobe/skills --path plugins/aem/edge-delivery-services --all
+gh upskill adobe/skills --all
 ```
 
 These skills provide AI assistance for:
