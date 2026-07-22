@@ -1,6 +1,5 @@
 /**
  * Decorates hero block
- * Supports variants: default, banner
  * @param {Element} block The hero block element
  */
 export default function decorate(block) {

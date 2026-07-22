@@ -1,4 +1,4 @@
-/* Default hero variant */
+/* Hero - Full-bleed background-image banner with navy fade overlay */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -6,59 +6,25 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-}
-
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
-}
-
-/* Banner variant - Full-bleed background-image banner with navy fade overlay */
-.hero.banner {
-  position: relative;
   min-height: 320px;
   overflow: hidden;
   padding: 0;
 }
 
-.hero.banner picture {
+.hero picture {
   position: absolute;
   inset: 0;
   z-index: initial;
 }
 
-.hero.banner img {
+.hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
 }
 
-.hero.banner > div:first-child {
+.hero > div:first-child {
   position: absolute;
   inset: 0;
   margin: 0;
@@ -67,7 +33,7 @@
   width: 100%;
 }
 
-.hero.banner::before {
+.hero::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -81,7 +47,7 @@
   pointer-events: none;
 }
 
-.hero.banner > div:last-child {
+.hero > div:last-child {
   position: relative;
   z-index: 2;
   margin: 0;
@@ -93,27 +59,27 @@
   padding: 32px 24px;
 }
 
-.hero.banner > div:last-child > div {
+.hero > div:last-child > div {
   width: 100%;
 }
 
-.hero.banner > div:first-child > div {
+.hero > div:first-child > div {
   display: block;
   height: 100%;
   width: 100%;
 }
 
-.hero.banner.no-image {
+.hero.no-image {
   background-color: var(--heading-color);
 }
 
-.hero.banner.no-image > div:first-child,
-.hero.banner.no-image::before {
+.hero.no-image > div:first-child,
+.hero.no-image::before {
   display: none;
 }
 
-.hero.banner h1,
-.hero.banner h2 {
+.hero h1,
+.hero h2 {
   margin: 0 0 32px;
   color: #fff;
   font-size: var(--heading-size-xxl, 44px);
@@ -122,21 +88,21 @@
   max-width: initial;
 }
 
-.hero.banner h1 a:any-link,
-.hero.banner h2 a:any-link {
+.hero h1 a:any-link,
+.hero h2 a:any-link {
   color: #fff;
   text-decoration: none;
 }
 
-.hero.banner p {
+.hero p {
   margin: 0 0 15px;
   color: #fff;
   font-size: var(--body-font-size-m, 20px);
   line-height: 1.5;
 }
 
-.hero.banner > div:last-child p a:any-link,
-main .hero.banner a.button:any-link {
+.hero > div:last-child p a:any-link,
+main .hero a.button:any-link {
   display: inline-block;
   margin: 8px 0 0;
   border: 1px solid #fff;
@@ -152,21 +118,21 @@ main .hero.banner a.button:any-link {
   white-space: nowrap;
 }
 
-.hero.banner > div:last-child p a:any-link:hover,
-.hero.banner > div:last-child p a:any-link:focus-visible,
-main .hero.banner a.button:any-link:hover,
-main .hero.banner a.button:any-link:focus-visible {
+.hero > div:last-child p a:any-link:hover,
+.hero > div:last-child p a:any-link:focus-visible,
+main .hero a.button:any-link:hover,
+main .hero a.button:any-link:focus-visible {
   background: #fff;
   color: var(--heading-color);
   text-decoration: none;
 }
 
 @media (width >= 900px) {
-  .hero.banner {
+  .hero {
     min-height: 421px;
   }
 
-  .hero.banner::before {
+  .hero::before {
     background-image: linear-gradient(
       90deg,
       var(--heading-color) 0%,
@@ -175,19 +141,19 @@ main .hero.banner a.button:any-link:focus-visible {
     );
   }
 
-  .hero.banner > div:last-child {
+  .hero > div:last-child {
     min-height: 421px;
     max-width: 49%;
     padding: 40px 0 40px 8.33%;
   }
 
-  .hero.banner h1,
-  .hero.banner h2 {
+  .hero h1,
+  .hero h2 {
     font-size: 44px;
     line-height: 56px;
   }
 
-  .hero.banner p {
+  .hero p {
     font-size: 20px;
     line-height: 30px;
   }
