@@ -1,52 +1,17 @@
-/* Default columns variant */
-.columns > div {
-  display: flex;
-  flex-direction: column;
-}
-
+/* Columns - styled columns for featured content */
 .columns img {
-  width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
-}
-
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
-@media (width >= 900px) {
-  .columns > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
-
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
-}
-
-/* Feature variant - styled columns for featured content */
-.columns.feature img {
   display: block;
   width: 100%;
 }
 
 /* Feature variant: 1 column - centered intro/about section */
-.columns.feature.columns-1-cols > div {
+.columns.columns-1-cols > div {
   max-width: 950px;
   margin: 0 auto;
   text-align: center;
 }
 
-.columns.feature.columns-1-cols h2 {
+.columns.columns-1-cols h2 {
   margin: 0 0 16px;
   color: var(--heading-color);
   font-size: 44px;
@@ -55,7 +20,7 @@
   text-align: center;
 }
 
-.columns.feature.columns-1-cols p {
+.columns.columns-1-cols p {
   margin: 0 0 15px;
   color: var(--text-color);
   font-size: 20px;
@@ -64,31 +29,31 @@
   text-align: center;
 }
 
-.columns.feature.columns-1-cols a:any-link {
+.columns.columns-1-cols a:any-link {
   color: var(--link-color);
   font-weight: 400;
   text-decoration: underline;
 }
 
 /* Feature variant: 2 columns - featured story with background */
-.columns.feature.columns-2-cols > div {
+.columns.columns-2-cols > div {
   background-color: var(--light-color);
 }
 
-.columns.feature.columns-2-cols > div > div {
+.columns.columns-2-cols > div > div {
   padding: 32px;
 }
 
-.columns.feature.columns-2-cols > div > .columns-img-col {
+.columns.columns-2-cols > div > .columns-img-col {
   padding: 0;
 }
 
-.columns.feature.columns-2-cols .columns-img-col img {
+.columns.columns-2-cols .columns-img-col img {
   height: 100%;
   object-fit: cover;
 }
 
-.columns.feature.columns-2-cols h3 {
+.columns.columns-2-cols h3 {
   margin: 0 0 16px;
   color: var(--heading-color);
   font-size: 28px;
@@ -96,16 +61,16 @@
   line-height: 36px;
 }
 
-.columns.feature.columns-2-cols h3 a:any-link {
+.columns.columns-2-cols h3 a:any-link {
   color: var(--heading-color);
   text-decoration: none;
 }
 
-.columns.feature.columns-2-cols h3 a:hover {
+.columns.columns-2-cols h3 a:hover {
   text-decoration: underline;
 }
 
-.columns.feature.columns-2-cols p {
+.columns.columns-2-cols p {
   margin: 0 0 15px;
   color: var(--text-color);
   font-size: 20px;
@@ -113,30 +78,30 @@
   line-height: 30px;
 }
 
-.columns.feature.columns-2-cols p a:any-link {
+.columns.columns-2-cols p a:any-link {
   color: var(--link-color);
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;
 }
 
-.columns.feature.columns-2-cols p a:hover {
+.columns.columns-2-cols p a:hover {
   text-decoration: underline;
 }
 
 @media (width >= 900px) {
-  .columns.feature.columns-2-cols > div {
+  .columns.columns-2-cols > div {
     align-items: stretch;
     flex-direction: row;
   }
 
-  .columns.feature.columns-2-cols > div > div {
+  .columns.columns-2-cols > div > div {
     flex: 0 1 57%;
     order: 0;
     padding: 32px 58px 32px 32px;
   }
 
-  .columns.feature.columns-2-cols > div > .columns-img-col {
+  .columns.columns-2-cols > div > .columns-img-col {
     flex: 0 1 43%;
     order: 1;
     padding: 0;

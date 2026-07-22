@@ -4,7 +4,7 @@ import { toClassName } from '../../scripts/aem.js';
 export default async function decorate(block) {
   // build tablist
   const tablist = document.createElement('div');
-  tablist.className = 'tabs-solutions-list';
+  tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
   // decorate tabs and tabpanels
@@ -14,7 +14,7 @@ export default async function decorate(block) {
 
     // decorate tabpanel
     const tabpanel = block.children[i];
-    tabpanel.className = 'tabs-solutions-panel';
+    tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
     tabpanel.setAttribute('aria-hidden', !!i);
     tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
@@ -22,7 +22,7 @@ export default async function decorate(block) {
 
     // build tab button
     const button = document.createElement('button');
-    button.className = 'tabs-solutions-tab';
+    button.className = 'tabs-tab';
     button.id = `tab-${id}`;
 
     button.innerHTML = tab.innerHTML;
@@ -51,10 +51,10 @@ export default async function decorate(block) {
       const headings = [...content.querySelectorAll(':scope > h3')];
       if (headings.length) {
         const grid = document.createElement('div');
-        grid.className = 'tabs-solutions-subteasers';
+        grid.className = 'tabs-subteasers';
         headings.forEach((h3) => {
           const teaser = document.createElement('div');
-          teaser.className = 'tabs-solutions-subteaser';
+          teaser.className = 'tabs-subteaser';
           let node = h3;
           const group = [];
           // collect this heading and following siblings until the next h3
